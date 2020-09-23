@@ -1,6 +1,10 @@
 package com.sapient.sapientweatherreport.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sapient.sapientweatherreport.domain.WeatherModelResponse;
+import com.sapient.sapientweatherreport.domain.weather.List;
+import com.sapient.sapientweatherreport.domain.weather.WeatherResponse;
+import com.sapient.sapientweatherreport.util.BaseUtil;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
