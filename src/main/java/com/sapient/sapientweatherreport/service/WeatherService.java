@@ -97,6 +97,7 @@ public class WeatherService
             weatherModelResponse.setHighTempWindow(highTempWindow);
             weatherModelResponse.setCity(city_name);
         }
+        logger.debug(objectMapper.writeValueAsString(weatherModelResponse));
         return weatherModelResponse;
     }
 
