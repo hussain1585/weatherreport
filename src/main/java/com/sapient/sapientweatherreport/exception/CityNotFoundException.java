@@ -1,5 +1,9 @@
 package com.sapient.sapientweatherreport.exception;
 
+/**
+ * @author Hussain Akhtar Wahid - Sept-23-2020
+ */
+
 public class CityNotFoundException extends Exception {
 
     public CityNotFoundException(String message) {

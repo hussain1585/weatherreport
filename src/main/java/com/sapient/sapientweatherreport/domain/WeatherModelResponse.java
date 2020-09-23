@@ -2,6 +2,10 @@ package com.sapient.sapientweatherreport.domain;
 
 import java.util.List;
 
+/**
+ * @author Hussain Akhtar Wahid - Sept-23-2020
+ */
+
 public class WeatherModelResponse
 {
     private String city;

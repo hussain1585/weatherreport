@@ -5,6 +5,10 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Hussain Akhtar Wahid - Sept-23-2020
+ */
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "3h"

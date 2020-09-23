@@ -5,6 +5,10 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Hussain Akhtar Wahid - Sept-23-2020
+ */
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "dt",
@@ -12,15 +16,16 @@ import java.util.Map;
         "weather",
         "clouds",
         "wind",
-        "sys",
-        "dt_txt",
+        "visibility",
+        "pop",
         "rain",
-        "snow"
+        "sys",
+        "dt_txt"
 })
 public class List {
 
     @JsonProperty("dt")
-    private Integer dt;
+    private long dt;
     @JsonProperty("main")
     private Main main;
     @JsonProperty("weather")
@@ -29,24 +34,26 @@ public class List {
     private Clouds clouds;
     @JsonProperty("wind")
     private Wind wind;
+    @JsonProperty("visibility")
+    private Integer visibility;
+    @JsonProperty("pop")
+    private Double pop;
+    @JsonProperty("rain")
+    private Rain rain;
     @JsonProperty("sys")
     private Sys sys;
     @JsonProperty("dt_txt")
     private String dtTxt;
-    @JsonProperty("rain")
-    private Rain rain;
-    @JsonProperty("snow")
-    private Snow snow;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("dt")
-    public Integer getDt() {
+    public long getDt() {
         return dt;
     }
 
     @JsonProperty("dt")
-    public void setDt(Integer dt) {
+    public void setDt(long dt) {
         this.dt = dt;
     }
 
@@ -90,6 +97,36 @@ public class List {
         this.wind = wind;
     }
 
+    @JsonProperty("visibility")
+    public Integer getVisibility() {
+        return visibility;
+    }
+
+    @JsonProperty("visibility")
+    public void setVisibility(Integer visibility) {
+        this.visibility = visibility;
+    }
+
+    @JsonProperty("pop")
+    public Double getPop() {
+        return pop;
+    }
+
+    @JsonProperty("pop")
+    public void setPop(Double pop) {
+        this.pop = pop;
+    }
+
+    @JsonProperty("rain")
+    public Rain getRain() {
+        return rain;
+    }
+
+    @JsonProperty("rain")
+    public void setRain(Rain rain) {
+        this.rain = rain;
+    }
+
     @JsonProperty("sys")
     public Sys getSys() {
         return sys;
@@ -108,26 +145,6 @@ public class List {
     @JsonProperty("dt_txt")
     public void setDtTxt(String dtTxt) {
         this.dtTxt = dtTxt;
-    }
-
-    @JsonProperty("rain")
-    public Rain getRain() {
-        return rain;
-    }
-
-    @JsonProperty("rain")
-    public void setRain(Rain rain) {
-        this.rain = rain;
-    }
-
-    @JsonProperty("snow")
-    public Snow getSnow() {
-        return snow;
-    }
-
-    @JsonProperty("snow")
-    public void setSnow(Snow snow) {
-        this.snow = snow;
     }
 
     @JsonAnyGetter

@@ -5,9 +5,14 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Hussain Akhtar Wahid - Sept-23-2020
+ */
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "temp",
+        "feels_like",
         "temp_min",
         "temp_max",
         "pressure",
@@ -20,16 +25,18 @@ public class Main {
 
     @JsonProperty("temp")
     private Double temp;
+    @JsonProperty("feels_like")
+    private Double feelsLike;
     @JsonProperty("temp_min")
     private Double tempMin;
     @JsonProperty("temp_max")
     private Double tempMax;
     @JsonProperty("pressure")
-    private Double pressure;
+    private Integer pressure;
     @JsonProperty("sea_level")
-    private Double seaLevel;
+    private Integer seaLevel;
     @JsonProperty("grnd_level")
-    private Double grndLevel;
+    private Integer grndLevel;
     @JsonProperty("humidity")
     private Integer humidity;
     @JsonProperty("temp_kf")
@@ -45,6 +52,16 @@ public class Main {
     @JsonProperty("temp")
     public void setTemp(Double temp) {
         this.temp = temp;
+    }
+
+    @JsonProperty("feels_like")
+    public Double getFeelsLike() {
+        return feelsLike;
+    }
+
+    @JsonProperty("feels_like")
+    public void setFeelsLike(Double feelsLike) {
+        this.feelsLike = feelsLike;
     }
 
     @JsonProperty("temp_min")
@@ -68,32 +85,32 @@ public class Main {
     }
 
     @JsonProperty("pressure")
-    public Double getPressure() {
+    public Integer getPressure() {
         return pressure;
     }
 
     @JsonProperty("pressure")
-    public void setPressure(Double pressure) {
+    public void setPressure(Integer pressure) {
         this.pressure = pressure;
     }
 
     @JsonProperty("sea_level")
-    public Double getSeaLevel() {
+    public Integer getSeaLevel() {
         return seaLevel;
     }
 
     @JsonProperty("sea_level")
-    public void setSeaLevel(Double seaLevel) {
+    public void setSeaLevel(Integer seaLevel) {
         this.seaLevel = seaLevel;
     }
 
     @JsonProperty("grnd_level")
-    public Double getGrndLevel() {
+    public Integer getGrndLevel() {
         return grndLevel;
     }
 
     @JsonProperty("grnd_level")
-    public void setGrndLevel(Double grndLevel) {
+    public void setGrndLevel(Integer grndLevel) {
         this.grndLevel = grndLevel;
     }
 
