@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Sapient Weather Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <p><h5>Sapient Weather Report</h5></p>
+            <p><h5>Home</h5></p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+
+            <form action="#" th:action="@{/weather}" >
+                <div class="row">
+                    <input type="text" name="city_name" value="Delhi,IN" id="city_name"/>
+                    <input type="submit" name="submit" value="submit"/>
+                    <!--<select name="city_name_2">-->
+                    <!--<option></option>-->
+                    <!--<option>London,Uk</option>-->
+                    <!--<option>Ahvaz,IR</option>-->
+                    <!--<option>Riyadh,SA</option>-->
+                    <!--<option>Delhi,IN</option>-->
+                    <!--<option>Kolkata,IN</option>-->
+                    <!--<option>Delhi,IN</option>-->
+                    <!--<option>Varanasi,IN</option>-->
+                    <!--<option>Bangalore,IN</option>-->
+                    <!--<option>Mysore,IN</option>-->
+                    <!--</select>-->
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>
