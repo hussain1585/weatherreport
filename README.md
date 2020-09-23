@@ -11,6 +11,12 @@
 3. build docker image using the command
 4. docker build . -t hussain:dev
 
+# test the service
+1. navigate to root folder
+2. cd $project_folder ('sapientweatherreport')
+3. execute tests by the command
+4. mvn test
+
 # execute the image on a container
 1. docker run -p 8080:8080 hussain:dev
 
@@ -23,7 +29,7 @@
 2. Ahvaz,IR
 3. Delhi,IN
 4. Kolkata,IN
-5. Delhi,IN
+5. Lucknow,IN
 6. Varanasi,IN
 7. Bangalore,IN
 8. Mysore,IN
