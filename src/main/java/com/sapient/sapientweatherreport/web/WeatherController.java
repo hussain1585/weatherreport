@@ -32,9 +32,9 @@ public class WeatherController
     private String APP_NAME;
 
     @RequestMapping(path = "/weather", method = RequestMethod.GET)
-    public String getWeather(Model model, String city_name/*, String city_name_2*/)
+    public String getWeather(Model model, String city_name)
     {
-        logger.debug("calling weather page");
+        logger.debug("calling weather page for city =>"+city_name);
         logger.info("APP_NAME =>" + APP_NAME);
 
         WeatherModelResponse weatherModelResponse = null;
