@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>All Employees</title>
+    <title>Sapient Weather Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
@@ -25,20 +25,46 @@
                 <p><h5>Current City</h5></p>
                 <p th:text="${weatherModelResponse.getCity()}"></p>
             </div>
+
+            <form action="#" th:action="@{/weather}" >
+                <div class="row">
+                    <input type="text" name="city_name" value="London,UK"/>
+                    <input type="submit" name="submit" value="submit"/>
+                    <!--<select name="city_name_2">-->
+                        <!--<option></option>-->
+                        <!--<option>London,Uk</option>-->
+                        <!--<option>Ahvaz,IR</option>-->
+                        <!--<option>Delhi,IN</option>-->
+                        <!--<option>Kolkata,IN</option>-->
+                        <!--<option>Delhi,IN</option>-->
+                        <!--<option>Varanasi,IN</option>-->
+                        <!--<option>Bangalore,IN</option>-->
+                        <!--<option>Mysore,IN</option>-->
+                    <!--</select>-->
+                </div>
+            </form>
         </div>
     </div>
 
     <div class="card">
         <div class="card-body">
-
             <div>
-                <p><h5>Max Temp in next 3 days</h5></p>
-                <p th:text="${weatherModelResponse.getTempMax()}"></p>
-            </div>
-
-            <div>
-                <p><h5>Min Temp in next 3 days</h5></p>
-                <p th:text="${weatherModelResponse.getTempMin()}"></p>
+                <table class="table table-striped table-responsive-md">
+                    <tbody>
+                    <tr>
+                        <td><h5>Max Temp in next 3 days</h5></td>
+                    </tr>
+                    <tr>
+                        <td th:text="${weatherModelResponse.getTempMax()}"></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Min Temp in next 3 days</h5></td>
+                    </tr>
+                    <tr>
+                        <td th:text="${weatherModelResponse.getTempMin()}"></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -48,21 +74,14 @@
             <div>
                 <div th:if="${weatherModelResponse.isRainPredictedInNext3Days()}">
                     <h5>Carry umbrella</h5>
-                    <h5>As Rain Is predicted in Next 3 days</h5>
+                    <h5>As Rain is predicted in Next 3 days</h5>
                 </div>
-                <!--<div th:if="${weatherModelResponse.getRainTimeWindow() != null}">-->
-                <!--<h5>Rain Window of 3 hours</h5>-->
-                <!--<ul>-->
-                <!--<li th:each="item : ${weatherModelResponse.getRainTimeWindow()}" th:text="${item}">Item description here...</li>-->
-                <!--</ul>-->
-                <!--</div>-->
-
 
                 <div>
                     <table class="table table-striped table-responsive-md">
                         <thead>
                         <tr>
-                            <th>Starting time window</th>
+                            <th>Rain Prediction hours</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -80,14 +99,13 @@
     <div class="card">
         <div class="card-body">
             <div th:if="${weatherModelResponse.isDoesTemperatureGoBeyond40DegreeCelsius()}">
-                <p>Does Tep Go beyond 40 C in next three days</p>
-                <h3>"Use sunscreen lotion"></h3>
-                <h3>"As temp is predicted to cross 40 C in Next 3 days"></h3>
+                <h5>Use sunscreen lotion</h5>
+                <h5>As temp is predicted to cross 40 C in Next 3 days</h5>
 
                 <table class="table table-striped table-responsive-md">
                     <thead>
                     <tr>
-                        <th>Starting time window</th>
+                        <th>High Temp Prediction Hours</th>
                     </tr>
                     </thead>
                     <tbody>
